@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main() {
+    double wavelength, e, d;
+
+
+
+    printf("Enter the wavelength in nanometers (380-750 nm): ");
+    scanf("%lf", &wavelength);
+
+    printf("Enter the value of e: ");
+    scanf("%lf", &e);
+
+    printf("Enter the value of d: ");
+    scanf("%lf", &d);
+
+
+    if (wavelength < 380 || wavelength > 750) {
+        printf("Out of the range. Please enter a valid number.\n");
+    } else {
+
+        char *color;
+        if (wavelength >= 380 && wavelength <= 450) {
+            color = "violet";
+        } else if (wavelength <= 485) {
+            color = "blue";
+        } else if (wavelength <= 500) {
+            color = "cyan";
+        } else if (wavelength <= 565) {
+            color = "green";
+        } else if (wavelength <= 590) {
+            color = "yellow";
+        } else if (wavelength <= 625) {
+            color = "orange";
+        } else {
+            color = "red";
+        }
+
+
+        double m = (2 * e * d) / wavelength;
+        printf("%d-th order maxima in %s light.\n", (int)m, color);
+    }
+
+    return 0;
+}
