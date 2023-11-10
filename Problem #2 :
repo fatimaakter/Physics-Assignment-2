@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double theta = 45.0 * M_PI / 180.0;
+    int m = 1;
+    double lambda;
+
+    printf("Enter the wavelength: ");
+    scanf("%lf", &lambda);
+
+    double ratio = sin(theta) / m / lambda;
+
+    printf("%lf\n", ratio);
+
+    return 0;
+}
